@@ -24,15 +24,4 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  public update(): void {
-    this.loading = true;
-
-    this.cognitoService.updateUser(this.user)
-      .then(() => {
-        this.loading = false;
-      }).catch(() => {
-      this.loading = false;
-    });
-  }
-
 }

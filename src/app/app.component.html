@@ -21,6 +21,7 @@
           <a class="nav-link" routerLink="" (click)="signOut()" *ngIf="isAuthenticated">Sign out</a>
         </li>
       </ul>
+      <div class="nav-item" *ngIf="isAuthenticated" style="float: right;">Logged in as: {{user.email}}</div>
     </div>
   </div>
 </nav>

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './userdashboard/profile/profile.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ApiReferenceComponent} from "./userdashboard/api-reference/api-reference.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'signUp',
     component: SignUpComponent,
+  },
+  {
+    path: 'apiref',
+    component: ApiReferenceComponent,
   },
   {
     path: '**',

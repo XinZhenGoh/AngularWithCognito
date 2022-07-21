@@ -1,6 +1,8 @@
 # Angular with AWS Cognito
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+## Prerequisites
+- install angular-cli (`npm install -g @angular/cli`)
 
 ## Libraries used
 - Bootstrap 4

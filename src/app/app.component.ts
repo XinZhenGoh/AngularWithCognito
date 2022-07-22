@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService) {
+              public cognitoService: CognitoService) {
     this.user = {} as IUser;
     this.isAuthenticated = false;
   }
@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
       .then((success: boolean) => {
         this.isAuthenticated = success;
       });
+    this.cognitoService.isAuthenticatedObs.subscribe(isAuthenticated => this.isAuthenticated = isAuthenticated);
   }
 
   public signOut(): void {

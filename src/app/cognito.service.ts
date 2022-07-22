@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import Amplify, { Auth } from 'aws-amplify';
 
 import { environment } from '../environments/environment';
@@ -18,6 +18,7 @@ export interface IUser {
 export class CognitoService {
 
   private authenticationSubject: BehaviorSubject<any>;
+  public isAuthenticatedObs: Observable<boolean>;
 
   constructor() {
     Amplify.configure({
@@ -25,6 +26,7 @@ export class CognitoService {
     });
 
     this.authenticationSubject = new BehaviorSubject<boolean>(false);
+    this.isAuthenticatedObs = this.authenticationSubject.asObservable();
   }
 
   public signUp(user: IUser): Promise<any> {

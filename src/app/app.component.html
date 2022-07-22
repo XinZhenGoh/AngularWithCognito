@@ -12,17 +12,20 @@
           <a class="nav-link" href="">Verizon Platform</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/signIn" routerLinkActive="active" *ngIf="!isAuthenticated && user">Login</a>
+          <a class="nav-link" routerLink="/signIn" routerLinkActive="active" *ngIf="!(cognitoService.isAuthenticatedObs | async)">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/signUp" routerLinkActive="active" *ngIf="!isAuthenticated">Sign up</a>
+          <a class="nav-link" routerLink="/signUp" routerLinkActive="active" *ngIf="!(cognitoService.isAuthenticatedObs | async)">Sign up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/overview" routerLinkActive="active" *ngIf="isAuthenticated">Home</a>
+          <a class="nav-link" routerLink="/overview" routerLinkActive="active" *ngIf="cognitoService.isAuthenticatedObs | async">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" (click)="signOut()" *ngIf="isAuthenticated">Sign out</a>
+          <a class="nav-link" routerLink="" (click)="signOut()" *ngIf="cognitoService.isAuthenticatedObs | async">Sign out</a>
         </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" routerLink="" *ngIf="cognitoService.isAuthenticatedObs | async">Testing</a>-->
+<!--        </li>-->
       </ul>
       <div class="nav-item" *ngIf="isAuthenticated" style="float: right;">Logged in as: {{user.email}}</div>
     </div>

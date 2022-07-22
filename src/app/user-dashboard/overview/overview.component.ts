@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { IUser, CognitoService } from '../../cognito.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss'],
 })
-export class ProfileComponent implements OnInit {
+export class OverviewComponent implements OnInit {
 
   loading: boolean;
   user: IUser;
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   constructor(private cognitoService: CognitoService) {
     this.loading = false;
     this.user = {} as IUser;
-    this.isAuthenticated = false;
+    this.isAuthenticated = true;
   }
 
   public ngOnInit(): void {

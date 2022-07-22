@@ -1,0 +1,29 @@
+.left-pane{
+  width: 30%;
+  padding: 30px;
+}
+
+.right-pane{
+  width: 70%;
+  padding: 30px;
+}
+
+.divider {
+  color: gray;
+}
+
+.mat-list-item-content{
+  padding: 30px;
+}
+
+.list-item {
+  text-decoration: none;
+}
+
+.mat-list-item.active{
+  color: black;
+}
+
+.mat-list-item {
+  color: gray;
+}

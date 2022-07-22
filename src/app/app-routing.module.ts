@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProfileComponent } from './userdashboard/profile/profile.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { ApiReferenceComponent} from "./userdashboard/api-reference/api-reference.component";
+import { ApiReferenceComponent} from "./user-dashboard/api-reference/api-reference.component";
+import { OverviewComponent} from "./user-dashboard/overview/overview.component";
 
 const routes: Routes = [
   {
@@ -13,8 +13,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'overview',
+    component: OverviewComponent,
   },
   {
     path: 'signIn',

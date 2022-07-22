@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {LeftNagivationPaneComponent} from "./left-nagivation-pane/left-nagivation-pane.component";
-import {ProfileComponent} from "./profile/profile.component";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatListModule} from "@angular/material/list";
 import { TopMenuComponent } from './top-menu/top-menu.component';
@@ -10,15 +9,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
 import { ApiReferenceComponent } from './api-reference/api-reference.component';
 import {MatTableModule} from "@angular/material/table";
-
+import { OverviewComponent } from './overview/overview.component';
 
 
 @NgModule({
   declarations: [
     LeftNagivationPaneComponent,
-    ProfileComponent,
     TopMenuComponent,
-    ApiReferenceComponent
+    ApiReferenceComponent,
+    OverviewComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +30,7 @@ import {MatTableModule} from "@angular/material/table";
   ],
   exports: [
     LeftNagivationPaneComponent,
-    ]
+  ]
 })
-export class UserdashboardModule { }
+export class UserDashboardModule { }
+
